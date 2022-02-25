@@ -39,10 +39,10 @@ const ListItem = styled.li`
   margin: 40px 0;
   cursor: pointer;
   color: #252525;
-  &:hover{
+  &:hover {
     background: #f0f0f0;
   }
-`
+`;
 
 const PostTitle = styled.h2`
   margin: 0;
@@ -64,11 +64,11 @@ export default function Home({
           <a>About this blog</a>
         </Link>
         <List>
-          {posts.map((post) =>(
-            <Link href="/posts/[id]" as={`/posts/${post.id}`}>
-            <ListItem key={post.id}>
-              <PostTitle>{post.title}</PostTitle>
-            </ListItem>
+          {posts.map((post) => (
+            <Link key={post.id} href="/posts/[id]" as={`/posts/${post.id}`}>
+              <ListItem key={post.id}>
+                <PostTitle>{post.title}</PostTitle>
+              </ListItem>
             </Link>
           ))}
         </List>
