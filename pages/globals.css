@@ -1,0 +1,11 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Comic Sans MS";
+  background: white;
+}
+
+* {
+  box-sizing: border-box;
+}
