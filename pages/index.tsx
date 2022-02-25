@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styled from "@emotion/styled";
 
 const Container = styled.div`
@@ -60,11 +60,16 @@ export default function Home({
       </Head>
       <Main>
         <BlogTitle className="title">{title}</BlogTitle>
+        <Link href="/about">
+          <a>About this blog</a>
+        </Link>
         <List>
           {posts.map((post) =>(
+            <Link href="/posts/[id]" as={`/posts/${post.id}`}>
             <ListItem key={post.id}>
               <PostTitle>{post.title}</PostTitle>
             </ListItem>
+            </Link>
           ))}
         </List>
       </Main>
